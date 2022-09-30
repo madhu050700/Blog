@@ -1,0 +1,20 @@
+
+<%-include("partials/header")-%>
+<h1>Home</h1>
+
+<p>
+  <%= content %>
+</p>
+  <%postItem.forEach(function(post){%>
+    <h2><%=post.postTitle%></h2>
+    <p>
+      <% let refTitle = post.postTitle.toLowerCase();%>
+      <%=post.postBody.slice(0,101)+" ..."%><a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+  <%})%>
+
+
+
+
+
+<%-include("partials/footer")-%>
